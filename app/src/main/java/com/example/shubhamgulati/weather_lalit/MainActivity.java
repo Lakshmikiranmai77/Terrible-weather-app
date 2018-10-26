@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 String result = response.body().string();
                 Gson gson = new Gson();
                 final APIResponse apiResponse = gson.fromJson(result,APIResponse.class);
-                Log.e("TAG",result);
+                Log.e("TAG 1",result);
 //                SharedPreferences sharedpreferences = getSharedPreferences("Shared prefs",Context.MODE_PRIVATE);
 //                final SharedPreferences.Editor editor = sharedpreferences.edit();
                 MainActivity.this.runOnUiThread(new Runnable() {
@@ -73,12 +73,12 @@ public class MainActivity extends AppCompatActivity {
                                 +"\nMaximum Temperature: "+apiResponse.main.getTemp_max()+"°C"
                                 +"\nWind: "
                                 +"\n Speed: "+apiResponse.wind.getSpeed()
-                                +"\n Degree:"+apiResponse.wind.getDeg()+"°"
+                                +"\n Degree: "+apiResponse.wind.getDeg()+"°"
                                 ;
                         //tvInfo.setText(toset);
-                        Log.e("TAG",""+apiResponse.main.getTemp());
+                        Log.e("TAG 2",""+apiResponse.main.getTemp());
                         for(Weather w: apiResponse.getWeather()){
-                            Log.e("TAG",""+w.getDescription());
+                            Log.e("TAG 3",""+w.getDescription());
                             toset=toset+"\nDescription: "+w.getDescription();
                         }
                         tvInfo.setText(toset);
